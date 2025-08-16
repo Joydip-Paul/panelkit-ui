@@ -1,0 +1,38 @@
+@use "./variables" as *;
+
+/* Spacing */
+.p-0 { padding: 0; }
+.m-0 { margin: 0; }
+
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* Layout */
+.container {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-4 { gap: 1rem; }
+
+/* Typography */
+.text-sm   { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg   { font-size: 1.125rem; }
+.text-muted { color: $muted; }
+
+/* Shape & shadows */
+.rounded { border-radius: $radius; }
+.shadow  { box-shadow: 0 6px 24px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06); }
+
+/* Colors */
+.bg-primary   { background: $primary; color: $primary-contrast; }
+.text-primary { color: $primary; }
+.border { border: 1px solid rgba(0,0,0,.12); }

@@ -1,0 +1,29 @@
+{
+  "name": "panelkit-ui",
+  "version": "1.0.0",
+  "description": "Custom SCSS-based CSS framework for admin dashboards",
+  "main": "dist/main.css",
+  "style": "dist/main.css",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "prebuild": "shx mkdir -p dist",
+    "build": "npm run prebuild && sass src/scss/main.scss dist/main.css --no-source-map",
+    "build:min": "sass src/scss/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "prepublishOnly": "npm run build && npm run build:min",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "framework",
+    "ui",
+    "admin",
+    "dashboard"
+  ],
+  "author": "Joydip Paul <joydippaul72@gmail.com> (https://github.com/joydip-paul)",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.79.0",
+    "shx": "^0.4.0"
+  }
+}

@@ -1,0 +1,49 @@
+@use "./variables" as *;
+
+.mn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  height: 2.5rem;
+  padding-inline: 1rem;
+
+  font-weight: 600;
+  border-radius: $radius;
+  border: 1px solid transparent;
+
+  background: $primary;
+  color: $primary-contrast;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:hover { opacity: .95; }
+  &:active { transform: translateY(1px); }
+}
+
+/* Variants */
+.mn-btn--outline {
+  background: transparent;
+  color: $primary;
+  border-color: rgba(37,99,235,.5);
+}
+
+.mn-btn--ghost {
+  background: transparent;
+  color: $fg;
+}
+
+/* Sizes */
+.mn-btn--sm {
+  height: 2rem;
+  padding-inline: .75rem;
+  font-size: .875rem;
+}
+
+.mn-btn--lg {
+  height: 3rem;
+  padding-inline: 1.25rem;
+  font-size: 1.125rem;
+}
