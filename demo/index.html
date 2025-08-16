@@ -2,37 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Panelkit Demo</title>
-      <link rel="stylesheet" href="/dist/main.css" />
+  <title>Panelkit-ui Demo</title>
+  <link rel="stylesheet" href="../dist/main.css" />
 </head>
-<body style="padding:2rem; background:#f9fafb;">
+<body style="background:#f5f5f5; padding:40px; font-family:sans-serif;">
 
+  <!-- Primary Button -->
+  <button class="pk-btn pk-btn--primary">Primary</button>
 
-<h1>Testing Panelkit CSS</h1>
+  <!-- Success Button -->
+  <button class="pk-btn pk-btn--success">Success</button>
 
-<!-- Button -->
-<button class="mn-btn">Primary</button>
-<button class="mn-btn mn-btn--outline">Outline</button>
-<button class="mn-btn mn-btn--ghost mn-btn--sm">Ghost Small</button>
+  <!-- Danger Button -->
+  <button class="pk-btn pk-btn--danger">Danger</button>
 
-<!-- Card -->
-<div class="mn-card mn-card--shadow mn-card--lg" style="margin-top:2rem;">
-  <div class="mn-card__header">
-    <h3 class="mn-card__title">Card Title</h3>
-    <p class="mn-card__subtitle">Subtitle</p>
-  </div>
-  <div class="mn-card__body">
-    <p>This is a simple card body.</p>
-    <p>Use Mannish CSS to design quickly 🚀</p>
-  </div>
-  <div class="mn-card__footer">
-    <button class="mn-btn">OK</button>
-    <div class="mn-card__actions">
-      <button class="mn-btn mn-btn--outline">Cancel</button>
-    </div>
-  </div>
+  <!-- Button with SVG Icon -->
+  <button class="pk-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM7 11l5-3-5-3v6z"/>
+    </svg>
+    Play
+  </button>
+
+  <!-- Button with Image Icon -->
+  <button class="pk-btn">
+    <img src="../src/img/download.png" alt="GitHub">
+    GitHub
+  </button>
+
+<div class="pk-dropdown">
+  <button>Click me</button>
+  <ul>
+    <li>Item one</li>
+    <li>Item two</li>
+    <li>
+      Sub menu
+      <ul>
+        <li>Sub item one</li>
+        <li>Sub item two</li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
-
+<script src="../dist/panelkit.js"></script>
 </body>
 </html>

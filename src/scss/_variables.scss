@@ -1,19 +1,1 @@
-// ---- Theme tokens (with !default so they can be overridden) ----
 $primary: #2563eb !default;
-$primary-contrast: #ffffff !default;
-
-$bg: #ffffff !default;
-$fg: #0f172a !default;
-$muted: #6b7280 !default;
-
-$radius: 12px !default;
-
-$space: (
-  0: 0,
-  1: 0.25rem,
-  2: 0.5rem,
-  3: 0.75rem,
-  4: 1rem,
-  6: 1.5rem,
-  8: 2rem
-) !default;

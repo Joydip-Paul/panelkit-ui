@@ -1,14 +1,28 @@
 {
   "name": "panelkit-ui",
   "version": "1.0.0",
-  "description": "Custom SCSS-based CSS framework for admin dashboards",
+  "description": "Custom SCSS-based CSS + JS framework for admin dashboards",
   "main": "dist/main.css",
   "style": "dist/main.css",
-  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "style": "./dist/main.css",
+      "require": "./dist/panelkit.js",
+      "import": "./dist/panelkit.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "prebuild": "shx mkdir -p dist",
-    "build": "npm run prebuild && sass src/scss/main.scss dist/main.css --no-source-map",
-    "build:min": "sass src/scss/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "build:css": "sass src/scss/main.scss dist/main.css --no-source-map",
+    "build:css:min": "sass src/scss/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "build:js": "shx cp src/js/dropdown.js dist/panelkit.js",
+    "build": "npm run prebuild && npm run build:css && npm run build:js",
+    "build:min": "npm run build:css:min",
     "prepublishOnly": "npm run build && npm run build:min",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +32,9 @@
     "framework",
     "ui",
     "admin",
-    "dashboard"
+    "dashboard",
+    "dropdown",
+    "buttons"
   ],
   "author": "Joydip Paul <joydippaul72@gmail.com> (https://github.com/joydip-paul)",
   "license": "MIT",
