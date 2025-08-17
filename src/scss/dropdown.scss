@@ -4,78 +4,36 @@
    =========================== */
 
 
-// .pk-dropdown {
-//   position: relative;
-//   display: inline-block;
-
-//   /* trigger */
-//   > button {
-//     background: #0d6efd; color: #fff; border: 0;
-//     border-radius: 8px; padding: 8px 12px; cursor: pointer;
-//   }
-
-//   /* root menu */
-//   > ul {
-//     position: absolute; top: calc(100% + 6px); left: 0; min-width: 220px;
-//     background: #fff; color: #111;
-//     border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
-//     box-shadow: 0 16px 40px rgba(0,0,0,.12), 0 2px 10px rgba(0,0,0,.08);
-//     padding: 8px 0; margin: 0; list-style: none; display: none; z-index: 50;
-//   }
-//   &.is-open > ul { display: block; }
-
-//   /* items */
-//   li {
-//     position: relative;
-//     padding: 10px 14px; cursor: pointer; white-space: nowrap;
-//   }
-//   li:hover { background: #f5f7fb; }
-//   li[disabled] { color: #c0c4cc; cursor: not-allowed; }
-//   li[disabled]:hover { background: transparent; }
-
-//   /* divider: just use an empty <li role="separator"> */
-//   li[role="separator"] { height: 1px; background: rgba(0,0,0,.06); margin: 6px 0; padding: 0; }
-
-//   /* submenu panel (direct child UL of an LI) */
-//   li > ul {
-//        position: absolute;
-//     top: -6px;
-//     left: calc(100% - -3px);
-//     width: max-content;
-//     background: #fff;
-//     border: 1px solid rgba(0, 0, 0, 0.08);
-//     border-radius: 3px;
-//     padding: 0;
-//     margin: 0;
-//     list-style: none;
-//     display: none;
-//   }
-//   /* show submenu when the parent <li> has the toggle class */
-//   li.is-sub-open > ul { display: block; }
-
-//   /* optional caret for items that own a submenu (modern browsers) */
-//   li:has(> ul) { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
-//   li:has(> ul)::after { content: "›"; opacity: .6; }
-// }
-
-
 .pk-dropdown {
   position: relative;
   display: inline-block;
 
   /* trigger */
   > button {
-    background: #0d6efd; color: #fff; border: 0;
-    border-radius: 8px; padding: 8px 12px; cursor: pointer;
+    background: transparent;
+    color: #212726;
+    border: 0;
+    cursor: pointer;
+        position: relative;
+    padding: 3px 20px 3px 10px;
+    &::after {
+          content: "";
+  position: absolute;
+    right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #212726; 
+    }
   }
 
   /* root menu (default opens to the left edge of trigger) */
   > ul {
     position: absolute; top: calc(100% + 6px); left: 0; min-width: 220px;
     background: #fff; color: #111;
-    border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
-    box-shadow: 0 16px 40px rgba(0,0,0,.12), 0 2px 10px rgba(0,0,0,.08);
-    padding: 8px 0; margin: 0; list-style: none; display: none; z-index: 50;
+    border: 1px solid #00000014; border-radius: 8px;
+    padding: 6px; margin: 0; list-style: none; display: none; z-index: 50;
   }
   &.is-open > ul { display: block; }
 
@@ -85,7 +43,7 @@
   /* items */
   li {
     position: relative;
-    padding: 10px 14px; cursor: pointer; white-space: nowrap;
+    padding: 8px 14px; cursor: pointer; white-space: nowrap;
   }
   li:hover { background: #f5f7fb; }
   li[disabled] { color: #c0c4cc; cursor: not-allowed; }
@@ -96,15 +54,14 @@
 
   /* SUBMENU panel (default opens to the right) */
   li > ul {
-    position: absolute; top: -6px; left: calc(100% - 6px); min-width: 200px;
-    background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.08);
-    padding: 6px 0; margin: 0; list-style: none; display: none;
+    position: absolute; top: -6px; left: calc(100% + 8px); min-width: 200px;
+    background: #fff; border: 1px solid #00000014; border-radius: 8px;
+    padding: 6px; margin: 0; list-style: none; display: none;
   }
   li.is-sub-open > ul { display: block; }
 
   /* FLIP submenu to the LEFT when space is tight */
-  li.is-sub-flip > ul { left: auto; right: calc(100% - 6px); }
+  li.is-sub-flip > ul { left: auto; right: calc(100% + 8px); }
 
   /* caret */
   li:has(> ul) { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }

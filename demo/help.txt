@@ -1,0 +1,4 @@
+npm run build    
+npm run build:min
+npx serve .
+npm publish --access public
